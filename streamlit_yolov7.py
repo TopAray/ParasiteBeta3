@@ -39,12 +39,15 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         
         '''
         super().__init__(img_size,path_yolov7_weights,path_img_i,device_i=device_i)
+        
     def main(self):
-        st.title('Custom YoloV7 Object Detector : Siriraj Parasitic Egg')
-        st.subheader(""" Upload an image of parasitic egg(s).  
-\n""")
+        st.title('Custom YoloV7 Object Detector')
+        st.subheader(""" Upload an image and run YoloV7 on it.  
+        This model was trained to detect the following classes from a drone's vantage point. 
+        Notice where the model fails.
+        (i.e. objects too close up & too far away):\n""")
         st.markdown(
-           '''
+            """
         <style>
         .reportview-container .markdown-text-container {
             font-family: monospace;
@@ -77,10 +80,10 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             background-image: None);
         }
         </style>
-        ''',
+        """,
             unsafe_allow_html=True,
         )
-       st.markdown(
+        st.markdown(
             """
             <style>
             .reportview-container {
@@ -93,6 +96,8 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             """,
             unsafe_allow_html=True
         )
+        
+        
         text_i_list=[]
         for i,name_i in enumerate(self.names):
             #text_i_list.append(f'id={i} \t \t name={name_i}\n')
