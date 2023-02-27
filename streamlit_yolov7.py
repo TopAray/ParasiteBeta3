@@ -5,6 +5,7 @@ import streamlit as st
 import logging
 import requests
 from PIL import Image
+import io
 from io import BytesIO
 import numpy as np
 import cv2
