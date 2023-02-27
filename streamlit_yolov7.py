@@ -41,10 +41,10 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         super().__init__(img_size,path_yolov7_weights,path_img_i,device_i=device_i)
     def main(self):
         st.title('Custom YoloV7 Object Detector : Siriraj Parasitic Egg')
-        st.subheader(""" Upload an image of parasitic egg.  
+        st.subheader(""" Upload an image of parasitic egg(s).  
 \n""")
         st.markdown(
-            """
+           '''
         <style>
         .reportview-container .markdown-text-container {
             font-family: monospace;
@@ -77,10 +77,10 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             background-image: None);
         }
         </style>
-        """,
+        ''',
             unsafe_allow_html=True,
         )
-        st.markdown(
+       st.markdown(
             """
             <style>
             .reportview-container {
@@ -152,7 +152,7 @@ if __name__=='__main__':
     #INPUTS for YOLOV7
     img_size=1056
     path_yolov7_weights="weights/best.pt"
-    path_img_i="https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/test_images/DJI_0028_fps24_frame00000040.jpg"
+    path_img_i="https://github.com/TopAray/ParasiteBeta3/blob/main/test_images/test001.jpg"
     #INPUTS for webapp
     app.capt="Initial Image"
     app.new_yolo_model(img_size,path_yolov7_weights,path_img_i)
