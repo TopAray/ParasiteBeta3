@@ -42,11 +42,10 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         super().__init__(img_size,path_yolov7_weights,path_img_i,device_i=device_i)
         
     def main(self):
-        st.title('Custom YoloV7 Object Detector')
+        st.title('Custom YoloV7 Parasitic Egg Detector')
         st.subheader(""" Upload an image and run YoloV7 on it.  
-        This model was trained to detect the following classes from a drone's vantage point. 
-        Notice where the model fails.
-        (i.e. objects too close up & too far away):\n""")
+        This model was trained to detect the parasitic eggs. 
+        :\n""")
         st.markdown(
             """
         <style>
@@ -104,7 +103,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             #text_i_list.append(f'id={i} \t \t name={name_i}\n')
             #text_i_list.append(f'{i}: {name_i}\n')
         #st.selectbox('Classes',tuple(text_i_list))
-        #self.conf_selection=st.selectbox('Confidence Threshold',tuple([0.1,0.25,0.5,0.75,0.95]))
+        self.conf_selection=st.selectbox('Confidence Threshold',tuple([0.1,0.25,0.5,0.75,0.95]))
         
         self.response=requests.get(self.path_img_i)
 
@@ -158,7 +157,7 @@ if __name__=='__main__':
     #INPUTS for YOLOV7
     img_size=1056
     path_yolov7_weights="weights/best.pt"
-    path_img_i="https://github.com/TopAray/ParasiteBeta3/blob/main/test_images/test001.jpg"
+    path_img_i="https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/test_images/test001.jpg"
     #INPUTS for webapp
     app.capt="Initial Image"
     app.new_yolo_model(img_size,path_yolov7_weights,path_img_i)
