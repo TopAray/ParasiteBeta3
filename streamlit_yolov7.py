@@ -99,19 +99,19 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         )
         
         
-        text_i_list=[]
-        for i,name_i in enumerate(self.names):
+        #text_i_list=[]
+        #for i,name_i in enumerate(self.names):
             #text_i_list.append(f'id={i} \t \t name={name_i}\n')
-            text_i_list.append(f'{i}: {name_i}\n')
-        st.selectbox('Classes',tuple(text_i_list))
-        self.conf_selection=st.selectbox('Confidence Threshold',tuple([0.1,0.25,0.5,0.75,0.95]))
+            #text_i_list.append(f'{i}: {name_i}\n')
+        #st.selectbox('Classes',tuple(text_i_list))
+        #self.conf_selection=st.selectbox('Confidence Threshold',tuple([0.1,0.25,0.5,0.75,0.95]))
         
         self.response=requests.get(self.path_img_i)
 
         self.img_screen=Image.open(BytesIO(self.response.content))
 
         st.image(self.img_screen, caption=self.capt, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
-        st.markdown('YoloV7 on streamlit.  Demo of object detection with YoloV7 with a web application.')
+        st.markdown('YoloV7 on streamlit.  An example of parasitic egg detection .')
         self.im0=np.array(self.img_screen.convert('RGB'))
         self.load_image_st()
         predictions = st.button('Get Parasite prediction?')
@@ -134,7 +134,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             return None
     
     def predict(self):
-        self.conf_thres=self.conf_selection
+        self.conf_thres=0.6
         st.write('Loading image')
         self.load_cv2mat(self.im0)
         st.write('Making inference')
