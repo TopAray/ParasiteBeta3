@@ -197,7 +197,7 @@ class SingleInference_YOLOV7:
             cv2.destroyAllWindows()
             self.clicked=False
         else:
-            log_i=f'Nothing detected for {self.path_img_i} \n \t w/ conf_thres={self.conf_thres} & iou_thres={self.iou_thres}'
+            log_i=f'Nothing detected'
             self.logging.debug(log_i)
 
     def letterbox(self,im, new_shape=(640, 640), color=(114, 114, 114), auto=True, scaleup=True, stride=32):
@@ -246,7 +246,7 @@ if __name__=='__main__':
     #path_img_i=r"/media/steven/Elements/Drone_Videos_Park/FPS_DESIRED_1d5/JPEGImages/DJI_0028_fps24_frame00000040.jpg"
 
     #INITIALIZE THE app
-    app=SingleInference_YOLOV7(img_size,path_yolov7_weights,path_img_i,device_i='cpu',conf_thres=0.25,iou_thres=0.5)
+    app=SingleInference_YOLOV7(img_size,path_yolov7_weights,path_img_i,device_i='cpu',conf_thres=0.25,iou_thres=0.6)
 
     #LOAD & INFERENCE
     app.load_model() #Load the yolov7 model
