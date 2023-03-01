@@ -88,10 +88,10 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             """
             <style>
             .reportview-container {
-                background: url("https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/misc/IMG_0512_reduce.JPG")
+                background: url("https://github.com/TopAray/ParasiteBeta3/blob/main/test_images/test001.jpg")
             }
         .sidebar .sidebar-content {
-                background: url("https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/misc/IMG_0512_reduce.JPG")
+                background: url("https://github.com/TopAray/ParasiteBeta3/blob/main/test_images/test001.jpg")
             }
             </style>
             """,
@@ -114,7 +114,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         st.markdown('YoloV7 on streamlit.  Demo of object detection with YoloV7 with a web application.')
         self.im0=np.array(self.img_screen.convert('RGB'))
         self.load_image_st()
-        predictions = st.button('Get prediction?')
+        predictions = st.button('Get Parasite prediction?')
         if predictions:
             self.predict()
             predictions=False
