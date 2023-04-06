@@ -1,6 +1,7 @@
 
 import argparse
 import io
+import PIL
 from PIL import Image
 import datetime
 
