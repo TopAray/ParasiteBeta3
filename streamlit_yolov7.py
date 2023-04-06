@@ -4,6 +4,7 @@ import os
 import streamlit as st
 import logging
 import requests
+import PIL
 from PIL import Image
 import io
 from io import BytesIO
