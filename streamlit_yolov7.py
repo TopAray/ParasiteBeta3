@@ -50,6 +50,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         
         st.subheader("""Araya Tha""")
         
+        '''
         st.markdown(
             """
         <style>
@@ -100,7 +101,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             """,
             unsafe_allow_html=True
         )
-        
+        '''
         
         #text_i_list=[]
         #for i,name_i in enumerate(self.names):
