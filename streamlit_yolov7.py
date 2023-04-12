@@ -47,6 +47,9 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         st.subheader(""" Upload an image and run YoloV7 on it.  
         This model was trained to detect the parasitic eggs. 
         :\n""")
+        
+        st.subheader("""Araya Tha""")
+        
         st.markdown(
             """
         <style>
