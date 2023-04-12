@@ -115,7 +115,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         self.response=requests.get(self.path_img_i)
 
         #####self.img_screen=Image.open(BytesIO(self.response.content))
-        self.img_screen=Image.open("/Users/arayatha/Desktop/111.jpg")
+        self.img_screen=Image.open(r"/Users/arayatha/Desktop/111.jpg")
       
         
         ####self.response=requests.get(self.path_img_i)
