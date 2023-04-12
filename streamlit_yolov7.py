@@ -109,6 +109,8 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         #st.selectbox('Classes',tuple(text_i_list))
         self.conf_selection=st.selectbox('Confidence Threshold',tuple([0.1,0.25,0.5,0.75,0.95]))
         
+        st.subheader("""Siriraj""")
+        
         self.response=requests.get(self.path_img_i)
 
         self.img_screen=Image.open(BytesIO(self.response.content))
